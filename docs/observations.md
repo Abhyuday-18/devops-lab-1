@@ -36,3 +36,28 @@ A Jenkins declarative pipeline will be used to automate:
 ## Deployment
 
 The deployment stage will automatically deploy the application after successful testing.
+
+## Jenkins CI/CD Execution
+
+Jenkins job `devops-lab-1` was configured to retrieve the Jenkinsfile from the GitHub repository.
+
+### Pipeline Stages
+
+The pipeline successfully executed the following stages:
+
+1. Checkout SCM
+2. Build
+3. Test
+4. Deploy
+
+### Build Result
+
+Jenkins Build #1 completed successfully with:
+
+`Finished: SUCCESS`
+
+The deployment stage copied the application to:
+
+`/tmp/devops-lab-1-deployed`
+
+The pipeline demonstrated an automated Build -> Test -> Deploy workflow using Jenkins and GitHub.
