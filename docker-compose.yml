@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+    image: devops-lab-1:compose
+    container_name: devops-lab-1-compose
+    ports:
+      - "8001:8000"
+    environment:
+      MESSAGE: "DevOps Lab 2 - Docker Compose is Working!"

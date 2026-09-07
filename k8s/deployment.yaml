@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-deployment
+spec:
+  replicas: 3
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+
+  selector:
+    matchLabels:
+      app: devops-app
+
+  template:
+    metadata:
+      labels:
+        app: devops-app
+
+    spec:
+      containers:
+        - name: devops-container
+          image: devops-lab-1:1.1
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 8000
+
+          env:
+            - name: MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: devops-config
+                  key: MESSAGE

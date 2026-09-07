@@ -1,9 +1,10 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import os
 
 
 class AppHandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        message = b"DevOps Lab 1 - CI/CD Pipeline is Working!"
+        message = os.environ.get("MESSAGE", "DevOps Lab 1 - CI/CD Pipeline is Working!").encode()
 
         self.send_response(200)
         self.send_header("Content-type", "text/plain")
