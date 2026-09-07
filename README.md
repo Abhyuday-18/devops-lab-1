@@ -1,50 +1,41 @@
-# DevOps Lab 1 - Foundations & Continuous Integration
+# DevOps and Automation Lab
 
-## Objective
+This repository contains the practical work completed for the DevOps and Automation Lab course.
 
-This project demonstrates a basic DevOps workflow using Git, GitHub, Jenkins and a Python application.
+## Lab 1 – DevOps Foundations & Continuous Integration
 
-## Tools Used
+Lab 1 covers Git, GitHub, Jenkins, Continuous Integration, automated testing, and deployment.
 
-- Ubuntu 24.04 LTS
-- Git
-- GitHub
-- Visual Studio Code
-- Jenkins
-- Python 3
+All Lab 1 files are available in the `Lab-1/` directory.
 
-## CI/CD Pipeline
+## Lab 2 – Containerization & Kubernetes Orchestration
 
-The Jenkins pipeline contains the following stages:
+Lab 2 covers Docker, Docker Compose, Minikube, Kubernetes Deployments, Services, ConfigMaps, application scaling, and Rolling Updates.
 
-1. Build
-2. Test
-3. Deploy
-
-### Build
-
-The application is compiled using Python's `compileall` module.
-
-### Test
-
-Automated unit tests are executed using Python's `unittest` framework.
-
-### Deploy
-
-The application is copied to a deployment directory and started automatically by Jenkins.
-
-## Application
-
-The sample application is a simple HTTP server running on port 8000.
+All Lab 2 files are available in the `Lab-2/` directory.
 
 ## Repository Structure
 
 ```text
-devops-lab-1/
-├── app/
-│   ├── app.py
-│   └── test_app.py
-├── docs/
-│   └── screenshots/
-├── Jenkinsfile
+.
+├── Lab-1/
+│   ├── app/
+│   ├── docs/
+│   │   └── screenshots/
+│   ├── Jenkinsfile
+│   └── README.md
+│
+├── Lab-2/
+│   ├── app/
+│   ├── docs/
+│   ├── k8s/
+│   ├── Dockerfile
+│   └── docker-compose.yml
+│
+├── .gitignore
 └── README.md
+```
+
+## Technologies Used
+
+Git, GitHub, Jenkins, Python, Docker, Docker Compose, Kubernetes, Minikube, and kubectl.
