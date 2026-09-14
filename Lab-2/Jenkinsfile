@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    environment {
+        KUBECONFIG = '/var/lib/jenkins/.kube/config'
+    }
+
+    stages {
+        stage('Validate Kubernetes') {
+            steps {
+                sh 'kubectl get nodes'
+            }
+        }
+
+        stage('Apply Kubernetes Manifests') {
+            steps {
+                sh 'kubectl apply -f k8s/'
+            }
+        }
+
+        stage('Wait for Rollout') {
+            steps {
+                sh 'kubectl rollout status deployment/devops-deployment'
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+                sh 'kubectl get deployment devops-deployment'
+                sh 'kubectl get pods'
+                sh 'kubectl get service devops-service'
+            }
+        }
+    }
+}
