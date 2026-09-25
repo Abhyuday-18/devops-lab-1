@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: devops-container
-          image: devops-lab-1:1.1
+          image: devops-lab-1:1.2
           imagePullPolicy: Never
 
           ports:
